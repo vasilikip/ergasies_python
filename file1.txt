@@ -1,0 +1,36 @@
+#ασκηση2
+#εισαγωγή αριθμού
+while True:
+    number=int(input("Δώσε έναν αριθμό στο διάστημα 0-1000000: "))
+    if number<=1000000: 
+	    break
+#δημιουργία λίστας με πρώτους αριθμούς ως το 1000		
+lista=[2]
+for i in range(2,1000):
+    for j in range(2,i):
+        if i % j==0:
+             break
+        else:
+            if lista[len(lista)-1]!=i:
+                lista.append(i)
+#δημιουργία λίστας πο περιέχει τον αιθμό του χρήστη και τους αριθμούς που αναλύεται
+lista1=[number]
+
+while True:
+    for i in range(len(lista)):
+	    if number%lista[i]==0:
+		    number=number/lista[i]
+		    lista1.append(lista[i])
+		    break
+			
+    if number==1:
+        break
+#εμφάνιση αποτελεσμάτων
+for i in range (len(lista1)):
+    if i==0:
+        print("Η ανάλυση του αρίθμού:") 
+        print(lista1[i])
+        print("σε πρώτους αριθμόυς είναι:")
+    else:
+        print(lista[i])
+
